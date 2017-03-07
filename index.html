@@ -12,25 +12,26 @@
     <section class="container">
       <h1>PhirePhiter's angular list</h1>
       <h3>Add a new person</h3>
+
       <form class="col-md-12">
         <div class="form-group col-md-6">
           <label for="firstName">First Name</label>
           <input type="text" name="firstName" class="form-control" ng-model="phirePhiter.newPerson.firstName" placeholder="First Name"/>
         </div>
-        <!-- What other fields do we need to ask for in order to get the information we need? -->
+
         <div class="form-group col-md-6">
           <label for="lastName">Last Name</label>
           <input type="text" name="lastName" class="form-control" ng-model="phirePhiter.newPerson.lastName" placeholder="Last Name"/>
         </div>
 
         <div class="form-group col-md-6">
-          <label for="shoutout">Shotout</label>
+          <label for="shoutout">Shoutout</label>
           <input type="text" name="shoutout" class="form-control" ng-model="phirePhiter.newPerson.shoutout" placeholder="Shoutout"/>
         </div>
 
         <button ng-click="phirePhiter.createPerson()">Submit</button>
-
       </form>
+
     </section>
     <section class="container">
       <h3>Class List</h3>
