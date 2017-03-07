@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Angular Basics</title>
-<!-- angular code -->  
+<!-- angular code -->
   <script type="text/javascript" src="vendors/angular.min.js"></script>
   <script type="text/javascript" src="scripts/client.js"></script>
   <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
@@ -48,7 +48,7 @@
 <!-- angular code -->
           <p>First Name: {{person.firstName}}</p>
           <p>Last Name: {{person.lastName}}</p>
-          <p>Git Username: {{person.git_username}}</p>
+          <p>Git Username: <a ng-href="http://www.github.com/{{person.git_username}}">{{person.git_username}}</a></p>
           <p>Shoutout: {{person.shoutout}}</p>
         </li>
       </ul>
