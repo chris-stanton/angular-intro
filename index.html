@@ -3,32 +3,39 @@
 <head>
   <meta charset="utf-8">
   <title>Angular Basics</title>
+<!-- angular code -->  
   <script type="text/javascript" src="vendors/angular.min.js"></script>
   <script type="text/javascript" src="scripts/client.js"></script>
   <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
 </head>
 <body>
+<!-- angular code -->
   <main ng-app="PhirePhiterApp" ng-controller="PhirePhiterController as phirePhiter">
     <section class="container">
       <h1>PhirePhiter's angular list</h1>
       <h3>Add a new person</h3>
-
+<!-- angular code -->
       <form class="col-md-12">
         <div class="form-group col-md-6">
-          <label for="firstName">First Name</label>
+          <label for="firstName">First Name:</label>
           <input type="text" name="firstName" class="form-control" ng-model="phirePhiter.newPerson.firstName" placeholder="First Name"/>
         </div>
-
+<!-- angular code -->
         <div class="form-group col-md-6">
-          <label for="lastName">Last Name</label>
+          <label for="lastName">Last Name:</label>
           <input type="text" name="lastName" class="form-control" ng-model="phirePhiter.newPerson.lastName" placeholder="Last Name"/>
         </div>
-
+<!-- angular code -->
         <div class="form-group col-md-6">
-          <label for="shoutout">Shoutout</label>
+          <label for="git_username">Git Username:</label>
+          <input type="text" name="git_username" class="form-control" ng-model="phirePhiter.newPerson.git_username" placeholder="Git Username"/>
+        </div>
+<!-- angular code -->
+        <div class="form-group col-md-6">
+          <label for="shoutout">Shoutout:</label>
           <input type="text" name="shoutout" class="form-control" ng-model="phirePhiter.newPerson.shoutout" placeholder="Shoutout"/>
         </div>
-
+<!-- angular code -->
         <button ng-click="phirePhiter.createPerson()">Submit</button>
       </form>
 
@@ -36,11 +43,12 @@
     <section class="container">
       <h3>Class List</h3>
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat="person in phirePhiter.people"> <!-- What needs to be repeated? -->
-          <!-- TODO: Create a list item for everyone in the class -->
-          <!-- include the other parameters for the person -->
+<!-- angular code -->
+        <li class="list-group-item" ng-repeat="person in phirePhiter.people">
+<!-- angular code -->
           <p>First Name: {{person.firstName}}</p>
           <p>Last Name: {{person.lastName}}</p>
+          <p>Git Username: {{person.git_username}}</p>
           <p>Shoutout: {{person.shoutout}}</p>
         </li>
       </ul>
