@@ -3,7 +3,7 @@ var phirePhiterApp = angular.module('PhirePhiterApp', []);
 phirePhiterApp.controller('PhirePhiterController', function(){
   console.log('PhirePhiter controller loaded');
 
-  var self = this; // holds the value of this
+  var self = this;
 
   self.people = [
     {
@@ -19,6 +19,7 @@ phirePhiterApp.controller('PhirePhiterController', function(){
   self.createPerson = function(){
     console.log(self.newPerson);
     self.people.push(angular.copy(self.newPerson));
+    self.newPerson = {};//clears out all fields after clicking submit button
   };
 
 });

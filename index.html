@@ -3,52 +3,56 @@
 <head>
   <meta charset="utf-8">
   <title>Angular Basics</title>
-<!-- angular code -->
+<!-- angular code / scourcing-->
   <script type="text/javascript" src="vendors/angular.min.js"></script>
   <script type="text/javascript" src="scripts/client.js"></script>
   <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
 </head>
 <body>
-<!-- angular code -->
+<!-- angular code / controller code-->
   <main ng-app="PhirePhiterApp" ng-controller="PhirePhiterController as phirePhiter">
     <section class="container">
+<!-- angular code / allows us to see the object build out -->
+      {{phirePhiter.newPerson}}
       <h1>PhirePhiter's angular list</h1>
       <h3>Add a new person</h3>
-<!-- angular code -->
+<!-- angular code / input-->
       <form class="col-md-12">
         <div class="form-group col-md-6">
           <label for="firstName">First Name:</label>
           <input type="text" name="firstName" class="form-control" ng-model="phirePhiter.newPerson.firstName" placeholder="First Name"/>
         </div>
-<!-- angular code -->
+<!-- angular code / input-->
         <div class="form-group col-md-6">
           <label for="lastName">Last Name:</label>
           <input type="text" name="lastName" class="form-control" ng-model="phirePhiter.newPerson.lastName" placeholder="Last Name"/>
         </div>
-<!-- angular code -->
+<!-- angular code / input-->
         <div class="form-group col-md-6">
           <label for="git_username">Git Username:</label>
           <input type="text" name="git_username" class="form-control" ng-model="phirePhiter.newPerson.git_username" placeholder="Git Username"/>
         </div>
-<!-- angular code -->
+<!-- angular code / input-->
         <div class="form-group col-md-6">
           <label for="shoutout">Shoutout:</label>
           <input type="text" name="shoutout" class="form-control" ng-model="phirePhiter.newPerson.shoutout" placeholder="Shoutout"/>
         </div>
-<!-- angular code -->
+<!-- angular code / button-->
         <button ng-click="phirePhiter.createPerson()">Submit</button>
       </form>
 
     </section>
     <section class="container">
+<!-- angular code / filtering-->
+      <label>Search: <input ng-model="phirePhiter.searchText"></label>
       <h3>Class List</h3>
       <ul class="list-group">
-<!-- angular code -->
-        <li class="list-group-item" ng-repeat="person in phirePhiter.people">
-<!-- angular code -->
+<!-- angular code / filtering (searchText.whatever to have a specific filter) -->
+        <li class="list-group-item" ng-repeat="person in phirePhiter.people | filter:phirePhiter.searchText"><!-- line requires an array  -->
+<!-- angular code / appending to DOM-->
           <p>First Name: {{person.firstName}}</p>
           <p>Last Name: {{person.lastName}}</p>
-          <p>Git Username: <a ng-href="http://www.github.com/{{person.git_username}}">{{person.git_username}}</a></p>
+          <p>Git Username: <a ng-href="http://www.github.com/{{person.git_username}}" target="_blank">{{person.git_username}}</a></p><!-- target="_blanks" opens window in a new tab-->
           <p>Shoutout: {{person.shoutout}}</p>
         </li>
       </ul>
