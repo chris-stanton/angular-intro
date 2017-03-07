@@ -38,13 +38,14 @@
           <input type="text" name="shoutout" class="form-control" ng-model="phirePhiter.newPerson.shoutout" placeholder="Shoutout"/>
         </div>
 <!-- angular code / button-->
-        <button ng-click="phirePhiter.createPerson()">Submit</button>
+<!-- bootstrap code / class="btn btn-primary" -->
+        <button class="btn btn-primary" ng-click="phirePhiter.createPerson()">Submit</button>
       </form>
 
     </section>
     <section class="container">
 <!-- angular code / filtering-->
-      <label>Search: <input ng-model="phirePhiter.searchText"></label>
+      <label>Filter: <input class="form-control" ng-model="phirePhiter.searchText"></label>
       <h3>Class List</h3>
       <ul class="list-group">
 <!-- angular code / filtering (searchText.whatever to have a specific filter) -->
