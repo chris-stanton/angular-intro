@@ -19,7 +19,7 @@ phirePhiterApp.controller('PhirePhiterController', function(){
   self.createPerson = function(){
     console.log(self.newPerson);
     self.people.push(angular.copy(self.newPerson));
-    self.newPerson = {};//clears out all fields after clicking submit button
+    self.newPerson = {};//clears out all input fields after clicking submit button
   };
 
 });
